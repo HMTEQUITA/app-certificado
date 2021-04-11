@@ -9,4 +9,5 @@ import java.util.Optional;
 public interface EmployeeRepository {
     Optional<Employee> getEmployee(int idEmployee);
     Optional<Employee> getEmployeeByDocumentTypeAndDocumentNumber(String documentType, String documentNumber);
+    Optional<List<Employee>> getEmployees();
 }

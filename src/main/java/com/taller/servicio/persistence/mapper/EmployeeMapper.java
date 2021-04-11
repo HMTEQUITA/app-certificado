@@ -7,6 +7,7 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
 
+import java.util.List;
 import java.util.Optional;
 
 @Mapper(componentModel = "spring", uses = {CompanyMapper.class})
@@ -26,6 +27,7 @@ public interface EmployeeMapper {
             @Mapping(source = "empresa", target = "company"),
     })
     Employee toEmployee(Empleado empleado);
+    List<Employee> toEmployees(List<Empleado> empleados);
 
     @Mappings({
             @Mapping(source = "tipoDocumento", target = "documentType"),

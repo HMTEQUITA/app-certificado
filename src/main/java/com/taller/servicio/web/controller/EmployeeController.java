@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/employees")
 public class EmployeeController {
@@ -17,10 +19,10 @@ public class EmployeeController {
     @Autowired
     private EmployeeService employeeService;
 
-    @GetMapping("/{employeeId}")
-    public ResponseEntity<Employee> getEmployee(@PathVariable("employeeId") int employeeId){
-        return employeeService.getEmployee(employeeId)
-                .map(employee -> new ResponseEntity<>(employee, HttpStatus.OK))
+    @GetMapping
+    public ResponseEntity<List<Employee>> getEmployees(){
+        return employeeService.getEmployees()
+                .map(employees -> new ResponseEntity<>(employees, HttpStatus.OK))
                 .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 

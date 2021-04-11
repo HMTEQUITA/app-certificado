@@ -4,13 +4,15 @@ import com.taller.servicio.domain.Employee;
 import com.taller.servicio.domain.HumanTalentManager;
 import com.taller.servicio.persistence.entity.Cargo;
 import com.taller.servicio.persistence.entity.Empleado;
+import java.util.ArrayList;
+import java.util.List;
 import javax.annotation.Generated;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2021-04-10T20:34:30-0500",
+    date = "2021-04-11T16:06:41-0500",
     comments = "version: 1.4.1.Final, compiler: javac, environment: Java 1.8.0_281 (Oracle Corporation)"
 )
 @Component
@@ -42,6 +44,20 @@ public class EmployeeMapperImpl implements EmployeeMapper {
         employee.setCompany( companyMapper.toCompany( empleado.getEmpresa() ) );
 
         return employee;
+    }
+
+    @Override
+    public List<Employee> toEmployees(List<Empleado> empleados) {
+        if ( empleados == null ) {
+            return null;
+        }
+
+        List<Employee> list = new ArrayList<Employee>( empleados.size() );
+        for ( Empleado empleado : empleados ) {
+            list.add( toEmployee( empleado ) );
+        }
+
+        return list;
     }
 
     @Override
