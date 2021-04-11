@@ -6,10 +6,7 @@ import com.taller.servicio.domain.service.CertificateService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/certificates")
@@ -18,9 +15,9 @@ public class CertificateController {
     @Autowired
     private CertificateService certificateService;
 
-    @GetMapping("/{employeeId}")
-    public ResponseEntity<Certificate> getCertificate(@PathVariable("employeeId") int employeeId) {
-        return certificateService.getCertificate(employeeId)
+    @GetMapping
+    public ResponseEntity<Certificate> getCertificate(@RequestParam(name = "documentType") String documentType, @RequestParam(name = "documentNumber") String documentNumber) {
+        return certificateService.getCertificate(documentType, documentNumber)
                 .map(certificate -> new ResponseEntity<>(certificate, HttpStatus.OK))
                 .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }

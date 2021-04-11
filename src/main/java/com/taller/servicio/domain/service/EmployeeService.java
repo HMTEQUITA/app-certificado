@@ -16,4 +16,8 @@ public class EmployeeService {
     public Optional<Employee> getEmployee(int idEmployee){
         return employeeRepository.getEmployee(idEmployee);
     }
+
+    public Optional<Employee> getEmployeeByDocumentTypeAndDocumentNumber(String documentType, String documentNumber){
+        return employeeRepository.getEmployeeByDocumentTypeAndDocumentNumber(documentType, documentNumber);
+    }
 }

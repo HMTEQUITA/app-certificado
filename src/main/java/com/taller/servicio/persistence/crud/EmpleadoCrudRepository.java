@@ -9,5 +9,5 @@ public interface EmpleadoCrudRepository extends CrudRepository<Empleado, Integer
 
     Optional<Empleado> findByEstadoAndCargoNombreCargo(boolean estado, String nombreCargo);
 
-
+    Optional<Empleado> findByTipoDocumentoAndNumeroDocumento(String numeroDocumento, String tipoDocumento);
 }

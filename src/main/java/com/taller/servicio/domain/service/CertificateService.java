@@ -14,11 +14,11 @@ public class CertificateService {
     @Autowired
     private EmployeeRepository employeeRepository;
 
-    public Optional<Certificate> getCertificate(int idEmployee) {
+    public Optional<Certificate> getCertificate(String documentType, String documentNumber) {
 
         Optional<Certificate> certificate = Optional.empty();
 
-        Optional<Employee> employee = employeeRepository.getEmployee(idEmployee);
+        Optional<Employee> employee = employeeRepository.getEmployeeByDocumentTypeAndDocumentNumber(documentType, documentNumber);
 
         if (employee.isPresent()){
             Certificate cert = new Certificate();
