@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/certificates")
+@CrossOrigin(origins = "*", methods = {RequestMethod.GET})
 public class CertificateController {
 
     @Autowired
