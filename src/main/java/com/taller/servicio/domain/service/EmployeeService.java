@@ -1,6 +1,6 @@
 package com.taller.servicio.domain.service;
 
-import com.taller.servicio.domain.Employee;
+import com.taller.servicio.domain.model.Employee;
 import com.taller.servicio.domain.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

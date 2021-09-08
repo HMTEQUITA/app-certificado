@@ -1,7 +1,6 @@
 package com.taller.servicio.web.controller;
 
-import com.taller.servicio.domain.Certificate;
-import com.taller.servicio.domain.Employee;
+import com.taller.servicio.domain.model.Certificate;
 import com.taller.servicio.domain.service.CertificateService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

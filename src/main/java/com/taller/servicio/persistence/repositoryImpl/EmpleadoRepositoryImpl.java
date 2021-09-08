@@ -1,17 +1,18 @@
-package com.taller.servicio.persistence;
+package com.taller.servicio.persistence.repositoryImpl;
 
-import com.taller.servicio.domain.Employee;
+import com.taller.servicio.domain.model.Employee;
 import com.taller.servicio.domain.repository.EmployeeRepository;
 import com.taller.servicio.persistence.crud.EmpleadoCrudRepository;
 import com.taller.servicio.persistence.entity.Empleado;
 import com.taller.servicio.persistence.mapper.EmployeeMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
 
-
-public class EmpleadoRepository implements EmployeeRepository {
+@Repository
+public class EmpleadoRepositoryImpl implements EmployeeRepository {
 
     @Autowired
     private EmpleadoCrudRepository empleadoCrudRepository;

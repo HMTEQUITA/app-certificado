@@ -1,7 +1,6 @@
-package com.taller.servicio.domain;
+package com.taller.servicio.domain.model;
 
 import java.time.LocalDate;
-import java.util.Optional;
 
 public class Employee {
 

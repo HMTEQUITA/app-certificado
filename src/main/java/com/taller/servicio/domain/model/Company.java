@@ -1,4 +1,4 @@
-package com.taller.servicio.domain;
+package com.taller.servicio.domain.model;
 
 public class Company {
     private String nameCompany;

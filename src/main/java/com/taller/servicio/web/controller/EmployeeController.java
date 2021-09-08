@@ -1,6 +1,6 @@
 package com.taller.servicio.web.controller;
 
-import com.taller.servicio.domain.Employee;
+import com.taller.servicio.domain.model.Employee;
 import com.taller.servicio.domain.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
